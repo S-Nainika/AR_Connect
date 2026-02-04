@@ -40,35 +40,13 @@ body::after {
 }
 
 .main-container {
-  display: flex;
-  justify-content: center;   /* centers left+right as a group */
-  align-items: center;       /* centers vertically */
-  gap: 200px;                 /* distance between left & right */
-  height: 100vh;
-}
+ 
 
 
-/* Left container */
-.left-container {
-  width: 70%;
-  height: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;       /* apply border-radius here */
-  overflow: hidden;           /* important for clipping the video */
-  
-}
 
-.left-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  
-}
 
-/* Right container */
-.right-container {
+
+
   width: 60%;
   height: 60%;
   display: flex;
