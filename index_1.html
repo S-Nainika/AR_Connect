@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Smart Campus Navigation</title>
+  <title>webAR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="style_1.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <div class="container">
-    <h2>📍 Smart Campus Navigation</h2>
-    <p>Scan • Search • Navigate</p>
+  <div class="main-container">
 
-    <input type="text" placeholder="Enter Block or Room">
+    <!-- Left side -->
+    <div class="left-container">
+      <video autoplay loop muted>
+        <source src="gvpce indoor anime.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
 
-    <button>Start Navigation</button>
+    <!-- Right side -->
+    <div class="right-container">
+    <h1>📍AR   Connect</h1>
+    <p style="font-size: 24px;">Scan • Search • Navigate</p>
+
+    <input id="destinationInput" type="text" placeholder="Enter Block or Room" list="blocks">
+
+<datalist id="blocks">
+  <option value="B0">
+  <option value="B1">
+  <option value="B2">
+  <option value="B3 CSE">
+  <option value="B4">
+  <option value="B5">
+  <option value="B6">
+  <option value="B7">
+  <option value="B8">
+  <option value="B9">
+  <option value="B10">
+  <option value="B11">
+  <option value="ADMIN BLOCK">
+  <option value="Girls Hostel">
+  <option value="Boys Hostel">
+</datalist>
+
+<p>📍 Current Location: <span id="locText">Detecting...</span></p>
+
+    <button id="startBtn" style="font-size: 24px;">Start Navigation</button>
+    </div>
+
   </div>
-
+<script src="script.js"></script>
 </body>
 </html>
