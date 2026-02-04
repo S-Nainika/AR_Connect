@@ -29,6 +29,7 @@ body::after {
   left: 50%;
   transform: translate(-50%, -50%);
   animation: pulse 4s ease-out infinite;
+  pointer-events: none;
 }
 
 @keyframes pulse {
@@ -43,6 +44,8 @@ body::after {
 }
 
 .main-container {
+position: relative;
+ z-index: 2;
  width: 90%;
   max-width: 480px;
   padding: 32px 28px;
