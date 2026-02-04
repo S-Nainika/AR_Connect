@@ -2,20 +2,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const campusMap = {
     "B8":  { x: 0, y: 0 },
-    "B7":  { x: 1, y: 0 },
-    "B6":  { x: 2, y: 0 },
-    "B5":  { x: 3, y: 0 },
-    "B4":  { x: 4, y: 0 },
-    "B3 CSE": { x: 5, y: 0 },
+    "B7":  { x: 2, y: 0 },
+    "B6":  { x: 4, y: 0 },
+    "B5":  { x: 6, y: 0 },
+    "B4":  { x: 8, y: 0 },
+    "B3 CSE": { x: 10, y: 0 },
 
-    "ADMIN BLOCK": { x: 6, y: 1 },
+    "ADMIN BLOCK": { x: 10, y: 2 },
 
-    "B0":  { x: 0, y: 2 },
-    "B11": { x: 1, y: 2 },
-    "B1":  { x: 2, y: 2 },
-    "B2":  { x: 3, y: 2 },
-    "B9":  { x: 4, y: 2 },
-    "B10": { x: 5, y: 2 }
+    "B0":  { x: 0, y: 4 },
+    "B11": { x: 2, y: 4 },
+    "B1":  { x: 4, y: 4 },
+    "B2":  { x: 6, y: 4 },
+    "B9":  { x: 8, y: 4 },
+    "B10": { x: 10, y: 4 },
+    "GIRLS HOSTEL":{ x: 12, y: 2 },
+    "BOYS HOSTEL":{ x: 4, y: 6 }
   };
 
   /* -------------------------------
