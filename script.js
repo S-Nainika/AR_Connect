@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
      Campus Map
   --------------------------------*/
   const campusMap = {
-    ENTRY_GATE:{x:-4,y:2},
+    ENTRY:{x:-4,y:2},
     B8:  { x: 0, y: 0 },
     B7:  { x: 2, y: 0 },
     B6:  { x: 4, y: 0 },
