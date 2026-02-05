@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
      Campus Map
   --------------------------------*/
   const campusMap = {
+    ENTRY_GATE:{x:-4,y:2},
     B8:  { x: 0, y: 0 },
     B7:  { x: 2, y: 0 },
     B6:  { x: 4, y: 0 },
@@ -20,12 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ADMIN_BLOCK: { x: 10, y: 2 },
 
-    B0:  { x: 0, y: 4 },
-    B11: { x: 2, y: 4 },
-    B1:  { x: 4, y: 4 },
-    B2:  { x: 6, y: 4 },
-    B9:  { x: 8, y: 4 },
-    B10: { x: 10, y: 4 },
+    B1:  { x: 0, y: 4 },
+    B2: { x: 2, y: 4 },
+    B9:  { x: 4, y: 4 },
+    B10:  { x: 6, y: 4 },
+    B11:  { x: 8, y: 4 },
+    B0: { x: 10, y: 4 },
 
     GIRLS_HOSTEL: { x: 12, y: 2 },
     BOYS_HOSTEL:  { x: 4, y: 6 }
