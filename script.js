@@ -102,6 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("🎯 Destination selected:", userInput, destination);
 
     // NEXT STEP: path finding 
+    const path = shortestPath(graph, currentLocation, destination);
+console.log(path);
     
   });
   function shortestPath(graph, start, end) {
@@ -134,8 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   return path.reverse();
 }
-const path = shortestPath(graph, currentLocation, destination);
-console.log(path);
+
 
 
 });
