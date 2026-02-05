@@ -62,7 +62,36 @@ document.addEventListener("DOMContentLoaded", () => {
   
 };
 
+function shortestPath(graph, start, end) {
+  const queue = [start];
+  const visited = new Set([start]);
+  const parent = {};
 
+  while (queue.length > 0) {
+    const current = queue.shift();
+
+    if (current === end) break;
+
+    for (let neighbor of graph[current]) {
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor);
+        parent[neighbor] = current;
+        queue.push(neighbor);
+      }
+    }
+  }
+
+  // Rebuild path
+  const path = [];
+  let node = end;
+
+  while (node) {
+    path.push(node);
+    node = parent[node];
+  }
+
+  return path.reverse();
+}
   /* -------------------------------
      STEP 1: Detect current location
   --------------------------------*/
@@ -106,36 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
 console.log(path);
     
   });
-  function shortestPath(graph, start, end) {
-  const queue = [start];
-  const visited = new Set([start]);
-  const parent = {};
-
-  while (queue.length > 0) {
-    const current = queue.shift();
-
-    if (current === end) break;
-
-    for (let neighbor of graph[current]) {
-      if (!visited.has(neighbor)) {
-        visited.add(neighbor);
-        parent[neighbor] = current;
-        queue.push(neighbor);
-      }
-    }
-  }
-
-  // Rebuild path
-  const path = [];
-  let node = end;
-
-  while (node) {
-    path.push(node);
-    node = parent[node];
-  }
-
-  return path.reverse();
-}
+  
 
 
 
