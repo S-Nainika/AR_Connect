@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "B4":  { x: 8, y: 0 },
     "B3 CSE": { x: 10, y: 0 },
 
-    "ADMIN BLOCK": { x: 10, y: 2 },
+    "ADMIN_BLOCK": { x: 10, y: 2 },
 
     "B0":  { x: 0, y: 4 },
     "B11": { x: 2, y: 4 },
@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "B2":  { x: 6, y: 4 },
     "B9":  { x: 8, y: 4 },
     "B10": { x: 10, y: 4 },
-    "GIRLS HOSTEL":{ x: 12, y: 2 },
-    "BOYS HOSTEL":{ x: 4, y: 6 }
+    "GIRLS_HOSTEL":{ x: 12, y: 2 },
+    "BOYS_HOSTEL":{ x: 4, y: 6 }
   };
   const graph = {
   ENTRY: ["R0"],
@@ -61,8 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   BOYS_HOSTEL:["R20"],
   
 };
-
-function shortestPath(graph, start, end) {
+  function shortestPath(graph, start, end) {
   const queue = [start];
   const visited = new Set([start]);
   const parent = {};
@@ -72,7 +71,7 @@ function shortestPath(graph, start, end) {
 
     if (current === end) break;
 
-    for (let neighbor of graph[current]) {
+    for (let neighbor of (graph[current] || [])) {
       if (!visited.has(neighbor)) {
         visited.add(neighbor);
         parent[neighbor] = current;
@@ -81,10 +80,10 @@ function shortestPath(graph, start, end) {
     }
   }
 
-  // Rebuild path
-  const path = [];
-  let node = end;
+  if (!visited.has(end)) return null;
 
+const path = [];
+let node = end;
   while (node) {
     path.push(node);
     node = parent[node];
@@ -92,6 +91,7 @@ function shortestPath(graph, start, end) {
 
   return path.reverse();
 }
+
   /* -------------------------------
      STEP 1: Detect current location
   --------------------------------*/
@@ -131,12 +131,8 @@ function shortestPath(graph, start, end) {
     console.log("🎯 Destination selected:", userInput, destination);
 
     // NEXT STEP: path finding 
-    const path = shortestPath(graph, currentLocation, destination);
+    const path = shortestPath(graph, currentLocation, input);
 console.log(path);
-    
-  });
-  
-
-
+      });
 
 });
