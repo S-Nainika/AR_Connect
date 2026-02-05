@@ -142,8 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("destinationInput");
   const button = document.getElementById("startBtn");
 
-const scene = document.getElementById("arScene");
-scene.style.display = "none"; // hide initially
 
   button.addEventListener("click", () => {
     const destination = normalize(input.value);
@@ -156,11 +154,7 @@ scene.style.display = "none"; // hide initially
     const path = shortestPath(graph, currentLocation, destination);
     console.log("🛣️ Path:", path);
 
-  document.querySelector(".main-container").style.display = "none";
-
-  scene.style.visibility = "visible";
-   // show AR
-  scene.components = {};           // force refresh
+  
   });
 
 });
