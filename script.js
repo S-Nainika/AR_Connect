@@ -158,7 +158,8 @@ scene.style.display = "none"; // hide initially
 
   document.querySelector(".main-container").style.display = "none";
 
-  scene.style.display = "block";   // show AR
+  scene.style.visibility = "visible";
+   // show AR
   scene.components = {};           // force refresh
   });
 
