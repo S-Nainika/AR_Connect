@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     R12: ["B9", "R11", "R17", "R13", "R20"],
 
     R20: ["BOYS_HOSTEL", "R17", "R12", "R13"],
-    R13: ["B2", "R17", "R12", "R16", "R14"],
+    R13: ["B2", "R17", "R12", "R16", "R14","R20"],
     R14: ["B1", "R13", "R16", "R15", "R2"],
 
     R15: ["R1", "R3", "R2", "R14"],
