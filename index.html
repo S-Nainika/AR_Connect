@@ -4,7 +4,10 @@
   <title>webAR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ar.js@3.4.4/aframe/build/aframe-ar.js"></script>
 </head>
+
 <body>
 
   <div class="main-container">
@@ -40,5 +43,13 @@
 
   </div>
 <script src="script.js"></script>
+<a-scene
+  embedded
+  arjs="sourceType: webcam; debugUIEnabled: false;"
+  vr-mode-ui="enabled: false">
+
+  <a-entity camera></a-entity>
+
+</a-scene>
 </body>
 </html>
