@@ -142,6 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("destinationInput");
   const button = document.getElementById("startBtn");
 
+const scene = document.getElementById("arScene");
+scene.style.display = "none"; // hide initially
+
   button.addEventListener("click", () => {
     const destination = normalize(input.value);
 
@@ -152,8 +155,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const path = shortestPath(graph, currentLocation, destination);
     console.log("🛣️ Path:", path);
-    document.querySelector(".main-container").style.display = "none";
-    document.querySelector("a-scene").style.display = "block";
+
+  document.querySelector(".main-container").style.display = "none";
+
+  scene.style.display = "block";   // show AR
+  scene.components = {};           // force refresh
   });
 
 });
