@@ -152,6 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const path = shortestPath(graph, currentLocation, destination);
     console.log("🛣️ Path:", path);
+    document.querySelector(".main-container").style.display = "none";
+    document.querySelector("a-scene").style.display = "block";
   });
 
 });
