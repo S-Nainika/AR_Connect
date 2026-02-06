@@ -153,7 +153,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const path = shortestPath(graph, currentLocation, destination);
     console.log("🛣️ Path:", path);
+localStorage.setItem("path", JSON.stringify(path));
 window.location.href = "ar.html";
+
   
   });
 
