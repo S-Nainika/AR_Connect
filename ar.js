@@ -1,16 +1,19 @@
 /* -------------------------------
    Load path from previous page
 --------------------------------*/
-const path = JSON.parse(localStorage.getItem("path"));
-const navHint = document.getElementById("navHint");
+const rawPath = JSON.parse(localStorage.getItem("path"));
 
-if (!path || path.length < 2) {
+// keep only campus locations (not roads)
+const path = rawPath.filter(p => campusMap[p]);
+
+if (path.length < 2) {
   navHint.innerText = "🎉 Destination reached";
   throw new Error("Destination reached");
 }
 
 const current = path[0];
 const next = path[1];
+
 
 /* -------------------------------
    Campus coordinates
