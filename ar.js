@@ -2,9 +2,7 @@
    Load path from previous page
 --------------------------------*/
 const path = JSON.parse(localStorage.getItem("path"));
-
 const navHint = document.getElementById("navHint");
-const arrow = document.getElementById("arrow");
 
 if (!path || path.length < 2) {
   navHint.innerText = "🎉 Destination reached";
@@ -56,25 +54,21 @@ function getDirection(from, to) {
 const direction = getDirection(current, next);
 
 /* -------------------------------
-   Apply direction
+   Show text instruction
 --------------------------------*/
 switch (direction) {
   case "RIGHT":
-    arrow.setAttribute("rotation", "0 -90 0");
-    navHint.innerText = "➡ TURN RIGHT\n📸 Close AR & scan next QR";
+    navHint.innerText = "➡ TURN RIGHT\n📸 Scan next QR";
     break;
 
   case "LEFT":
-    arrow.setAttribute("rotation", "0 90 0");
-    navHint.innerText = "⬅ TURN LEFT\n📸 Close AR & scan next QR";
+    navHint.innerText = "⬅ TURN LEFT\n📸 Scan next QR";
     break;
 
   case "BACK":
-    arrow.setAttribute("rotation", "0 180 0");
-    navHint.innerText = "↩ TURN BACK\n📸 Close AR & scan next QR";
+    navHint.innerText = "↩ TURN BACK\n📸 Scan next QR";
     break;
 
   default:
-    arrow.setAttribute("rotation", "0 0 0");
-    navHint.innerText = "⬆ GO STRAIGHT\n📸 Close AR & scan next QR";
+    navHint.innerText = "⬆ GO STRAIGHT\n📸 Scan next QR";
 }
