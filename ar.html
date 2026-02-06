@@ -2,71 +2,22 @@
 <html>
 <head>
   <title>AR Navigation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- A-Frame + AR.js -->
   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    #navHint {
-      position: fixed;
-      top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 999;
-
-      background: rgba(0, 0, 0, 0.65);
-      color: white;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-size: 15px;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    #exitBtn {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 999;
-
-      padding: 12px 20px;
-      border-radius: 14px;
-      border: none;
-      background: #0072ff;
-      color: white;
-      font-size: 15px;
-      cursor: pointer;
-    }
-  </style>
 </head>
 
-<body>
-
-  <!-- Direction text -->
-  <div id="navHint">Loading direction…</div>
-
-  <!-- Exit AR -->
-  <button id="exitBtn" onclick="window.history.back()">
-    📸 Scan Next QR
-  </button>
-
-  <!-- AR Scene -->
-  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+<body style="margin:0; overflow:hidden;">
+   <div id="navHint">
+    ➡ Follow the arrow<br>
+    📍 Scan the next QR to continue
+  </div>
+  <a-scene embedded arjs="sourceType: webcam;">
     
+    <!-- Camera -->
     <a-camera position="0 1.6 0"></a-camera>
 
-    <!-- Direction Arrow -->
-    <a-cone
-      id="arrow"
+    <!-- Arrow -->
+    <a-cone id="arrow"
       position="0 0 -3"
       rotation="0 0 0"
       color="yellow"
